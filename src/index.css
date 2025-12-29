@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Landing Page - Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 18%;
+    
+    --card: 220 14% 96%;
+    --card-foreground: 0 0% 18%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    
+    --primary: 27 89% 67%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 9% 46%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    --accent: 27 89% 67%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 251 58% 66%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(251 58% 66%) 0%, hsl(251 73% 77%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 96%) 100%);
+    --shadow-glow: 0 0 60px hsl(251 58% 66% / 0.15);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.05);
+  }
+
+  .dark {
+    /* Dashboard - Dark SaaS Theme */
+    --background: 250 35% 12%;
+    --foreground: 0 0% 100%;
+    
+    --card: 251 32% 16%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 251 32% 16%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 251 85% 69%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 251 25% 22%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 251 25% 22%;
+    --muted-foreground: 240 5% 65%;
+    
+    --accent: 251 85% 69%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 251 20% 28%;
+    --input: 252 30% 17%;
+    --ring: 251 85% 69%;
+    
+    /* Auth pages specific */
+    --auth-bg: 252 30% 14%;
+    --auth-card: 252 30% 18%;
+    --auth-border: 252 22% 24%;
+    --auth-input: 252 30% 15%;
+    
+    /* Dashboard specific */
+    --sidebar-bg: 252 35% 11%;
+    --success: 142 71% 58%;
+    --info: 172 66% 55%;
+    --warning: 27 89% 67%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(251 58% 66%) 0%, hsl(251 73% 77%) 100%);
+    --shadow-glow: 0 0 80px hsl(251 85% 69% / 0.2);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .gradient-btn {
+    background-image: var(--gradient-primary);
+    @apply text-white font-semibold shadow-lg transition-all duration-300;
+  }
+  
+  .gradient-btn:hover {
+    @apply opacity-90 scale-[1.02];
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-2xl;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .auth-input {
+    @apply w-full px-4 py-3 pl-11 rounded-xl border border-border bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-all duration-200;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-primary/10 text-primary;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+}
