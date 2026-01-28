@@ -1,65 +1,34 @@
-# Welcome to Match My Pros
+# 📝 Resume Analyzer
 
-## Project info
+Resume Analyzer is a tool that parses resumes, extracts structured information, and provides feedback to help job seekers improve their resumes. It uses natural language processing (NLP) techniques to identify and analyze important details such as skills, experience, education, and keywords relevant to job descriptions.
 
-**URL**: 
+---
 
-## How can I edit this code?
+## 🔍 Key Features
 
-There are several ways of editing your application.
+- 📄 **Resume Parsing** – Extracts text and structured data from uploaded resumes (PDF/DOCX/TXT).  
+- 🤖 **NLP-Powered Analysis** – Identifies core resume elements like skills, experience, education, contact info.  
+- 📊 **Summary Report** – Shows a clear, organized summary of extracted data.  
+- 🎯 **Feedback & Recommendations** – Provides insights for improving resume quality.  
+- 🔁 **Multiple File Format Support** – Works with PDF, DOCX, and TXT resume formats.  
+- 🌐 **Web/CLI Interface** – User-friendly interface for uploading and analyzing resumes.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes.
+## 🛠️ How It Works
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. User uploads a resume file.  
+2. Resume text extraction is performed (using libraries like `PyMuPDF`, `docx2txt`, etc.).  
+3. NLP processing extracts entities such as skills, experience, and education.  
+4. Results are summarized and displayed.
 
-Follow these steps:
+> Text extraction and NLP parsing help transform unstructured resume content into structured data for analysis.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🚀 Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-To deploy this project, you will need to set up your own deployment process.
-
-## Can I connect a custom domain to my project?
-
-Yes, you can!
-
-To connect a domain, you will need to set up your own custom domain configuration.
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+pip install -r requirements.txt
